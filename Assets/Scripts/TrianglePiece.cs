@@ -1,9 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class TrianglePlus : MonoBehaviour
+public class TrianglePiece : MonoBehaviour
 {
     [SerializeField] private PieceType pieceType;
     [SerializeField] private PieceColor Side1Color;
@@ -17,9 +18,10 @@ public class TrianglePlus : MonoBehaviour
     [SerializeField] private PieceColor GlowColor;
     [SerializeField] private PieceColor OutlineColor;
 
+    [SerializeField] private GameObject VisualObject;
 
-    private TrianglePlusVisual trianglePlusVisual;
-    private GameObject Visual;
+    private TrianglePieceVisual trianglePieceVisual;
+    
 
     public enum PieceType
     {
@@ -31,8 +33,8 @@ public class TrianglePlus : MonoBehaviour
     public enum PieceColor
     {
         Transparent,
-        White,
         Black,
+        White,
         Red,
         Green,
         Blue,
@@ -40,33 +42,33 @@ public class TrianglePlus : MonoBehaviour
         Cyan,
         Magenta,
         Purple,
-        Orange,
-        Pink,
-        LightBlue,
-        LightGreen
+
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        trianglePlusVisual = GameObject.Find("Visual").GetComponent<TrianglePlusVisual>();
+        
+        trianglePieceVisual = VisualObject.GetComponent<TrianglePieceVisual>();
 
-        SetPieceType(PieceType.SwirlRight);
-        SetPieceColors(PieceColor.Red, PieceColor.Green, PieceColor.Blue);
-        SetBackgroundColors(PieceColor.Transparent);
+        SetPieceType(GetRandomPieceType());
+        SetPieceColors(GetRandomPieceColor(), GetRandomPieceColor(), GetRandomPieceColor());
+        SetBackgroundColors(PieceColor.Black);
 
         SetOutlineColor(PieceColor.Black);
-        OutlineOn();
+        OutlineOff();
 
-        SetGlowColor(PieceColor.Yellow);
-        GlowOff();     
+        SetGlowColor(GetRandomPieceColor());
+        GlowOn();
+
+        //Debug.Log(("[{0}]", string.Join(", ", GetPieceColors())));
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.position = new Vector3(transform.position.x + (.1f) * Time.deltaTime, transform.position.y, transform.position.z);
+        transform.position = new Vector3(transform.position.x + (.3f) * Time.deltaTime, transform.position.y, transform.position.z);
 
     }
 
@@ -76,13 +78,13 @@ public class TrianglePlus : MonoBehaviour
         switch (pieceType)
         {
             case PieceType.SwirlLeft:
-                trianglePlusVisual.SetSwirlLeft();
+                trianglePieceVisual.SetSwirlLeft();
                 break;
             case PieceType.SwirlRight:
-                trianglePlusVisual.SetSwirlRight();
+                trianglePieceVisual.SetSwirlRight();
                 break;
             case PieceType.Ray:
-                trianglePlusVisual.SetRay();
+                trianglePieceVisual.SetRay();
                 break;
         }
     }
@@ -103,9 +105,9 @@ public class TrianglePlus : MonoBehaviour
     {
         return new List<PieceColor[]>
         {
-            new PieceColor[] { Background1Color, Background2Color, Background3Color },
-            new PieceColor[] { Background3Color, Background1Color, Background2Color },
-            new PieceColor[] { Background2Color, Background3Color, Background1Color }
+            new PieceColor[] { Side1Color, Side2Color, Side3Color },
+            new PieceColor[] { Side3Color, Side1Color, Side2Color },
+            new PieceColor[] { Side2Color, Side3Color, Side1Color }
 
         };
     }
@@ -116,10 +118,10 @@ public class TrianglePlus : MonoBehaviour
         Side2Color = a_Color2;
         Side3Color = a_Color3;
 
-        trianglePlusVisual.SetSideColor(0, GetColor(Side1Color));
-        trianglePlusVisual.SetSideColor(1, GetColor(Side1Color));
-        trianglePlusVisual.SetSideColor(2, GetColor(Side2Color));
-        trianglePlusVisual.SetSideColor(3, GetColor(Side3Color));
+        trianglePieceVisual.SetSideColor(0, GetColor(Side1Color));
+        trianglePieceVisual.SetSideColor(1, GetColor(Side1Color));
+        trianglePieceVisual.SetSideColor(2, GetColor(Side2Color));
+        trianglePieceVisual.SetSideColor(3, GetColor(Side3Color));
     }
 
     public void SetBackgroundColors(PieceColor a_Color1, PieceColor a_Color2, PieceColor a_Color3)
@@ -128,10 +130,10 @@ public class TrianglePlus : MonoBehaviour
         Background2Color = a_Color2;
         Background3Color = a_Color3;
 
-        trianglePlusVisual.SetBackgroundColor(0, GetColor(Background1Color));
-        trianglePlusVisual.SetBackgroundColor(1, GetColor(Background1Color));
-        trianglePlusVisual.SetBackgroundColor(2, GetColor(Background2Color));
-        trianglePlusVisual.SetBackgroundColor(3, GetColor(Background3Color));
+        trianglePieceVisual.SetBackgroundColor(0, GetColor(Background1Color));
+        trianglePieceVisual.SetBackgroundColor(1, GetColor(Background1Color));
+        trianglePieceVisual.SetBackgroundColor(2, GetColor(Background2Color));
+        trianglePieceVisual.SetBackgroundColor(3, GetColor(Background3Color));
     }
 
     public void SetBackgroundColors(PieceColor a_Color)
@@ -141,35 +143,60 @@ public class TrianglePlus : MonoBehaviour
 
     public void GlowOn()
     {
-        trianglePlusVisual.ShowGlow();
+        trianglePieceVisual.ShowGlow();
     }
 
     public void GlowOff()
     {
-        trianglePlusVisual.HideGlow();
+        trianglePieceVisual.HideGlow();
     }
 
     public void SetGlowColor(PieceColor a_Color)
     {
         GlowColor = a_Color;
-        trianglePlusVisual.SetGlowColor(GetColor(GlowColor) );
+        trianglePieceVisual.SetGlowColor(GetColor(GlowColor) );
     }
 
     public void OutlineOn()
     {
-        trianglePlusVisual.ShowOutline();
+        trianglePieceVisual.ShowOutline();
     }
 
     public void OutlineOff()
     {
-        trianglePlusVisual.HideOutline();
+        trianglePieceVisual.HideOutline();
     }
 
     public void SetOutlineColor(PieceColor a_Color)
     {
         OutlineColor = a_Color;
-        trianglePlusVisual.SetOutlineColor(GetColor(OutlineColor));
+        trianglePieceVisual.SetOutlineColor(GetColor(OutlineColor));
     }
+    private PieceColor GetRandomPieceColor()
+    {
+        Array _EnumValues = Enum.GetValues(typeof(PieceColor));
+        int _RandomIndex = UnityEngine.Random.Range(2, _EnumValues.Length);
+        PieceColor _RandomPieceColor = (PieceColor)_EnumValues.GetValue(_RandomIndex);
+
+        Debug.Log("Random Index: " + _RandomIndex);
+
+        return _RandomPieceColor;
+    }
+
+    private PieceType GetRandomPieceType()
+    {
+        Array _EnumValues = Enum.GetValues(typeof(PieceType));
+        int _RandomeIndex = UnityEngine.Random.Range(0, _EnumValues.Length);
+        PieceType _RandomPieceType = (PieceType)_EnumValues.GetValue(_RandomeIndex);
+
+        return _RandomPieceType;
+    }
+
+    private float NormalizeNumber(int a_Number)
+    {
+        return a_Number / 255f;
+    }
+
     private Color GetColor(PieceColor a_Color)
     {
         switch (a_Color)
@@ -190,18 +217,18 @@ public class TrianglePlus : MonoBehaviour
                 return Color.cyan;
             case PieceColor.Magenta:
                 return Color.magenta;
-            case PieceColor.Orange:
-                return new Color(225, 165, 0);
+            //case PieceColor.Orange:
+            //    return new Color(NormalizeNumber(225), NormalizeNumber(165), NormalizeNumber(0), 1);
             case PieceColor.Purple:
-                return new Color(160, 32, 240);
-            case PieceColor.Pink:
-                return new Color(255, 192, 203);
-            case PieceColor.LightBlue:
-                return new Color(173, 216, 230);
-            case PieceColor.LightGreen:
-                return new Color(144, 238, 144);
+                return new Color(NormalizeNumber(160), NormalizeNumber(32), NormalizeNumber(240), 1);
+            //case PieceColor.Pink:
+            //    return new Color(NormalizeNumber(255), NormalizeNumber(192), NormalizeNumber(203), 1);
+            //case PieceColor.LightBlue:
+            //    return new Color(NormalizeNumber(173), NormalizeNumber(216), NormalizeNumber(230), 1);
+            //case PieceColor.LightGreen:
+            //    return new Color(NormalizeNumber(144), NormalizeNumber(238), NormalizeNumber(144), 1);
             case PieceColor.Transparent:
-                return new Color(0, 0, 0, 0);
+                return new Color();
             default:
                 return Color.black;
         }
