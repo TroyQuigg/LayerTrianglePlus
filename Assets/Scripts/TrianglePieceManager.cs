@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class TrianglePiece : MonoBehaviour
+public class TrianglePieceManager : MonoBehaviour
 {
     [SerializeField] private PieceType pieceType;
     [SerializeField] private PieceColor Side1Color;
@@ -20,7 +20,7 @@ public class TrianglePiece : MonoBehaviour
 
     [SerializeField] private GameObject VisualObject;
 
-    private TrianglePieceVisual trianglePieceVisual;
+    private TrianglePieceVisualManager TrianglePieceVisual;
     
 
     public enum PieceType
@@ -48,18 +48,7 @@ public class TrianglePiece : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
-        trianglePieceVisual = VisualObject.GetComponent<TrianglePieceVisual>();
-
-        SetPieceType(GetRandomPieceType());
-        SetPieceColors(GetRandomPieceColor(), GetRandomPieceColor(), GetRandomPieceColor());
-        SetBackgroundColors(PieceColor.Black);
-
-        SetOutlineColor(PieceColor.Black);
-        OutlineOff();
-
-        SetGlowColor(GetRandomPieceColor());
-        GlowOn();
+        TrianglePieceVisual = VisualObject.GetComponent<TrianglePieceVisualManager>();
 
         //Debug.Log(("[{0}]", string.Join(", ", GetPieceColors())));
 
@@ -68,23 +57,22 @@ public class TrianglePiece : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = new Vector3(transform.position.x + (.3f) * Time.deltaTime, transform.position.y, transform.position.z);
-
+        
     }
 
-    private void SetPieceType(PieceType pieceType)
+    public void SetPieceType(PieceType pieceType)
     {
         this.pieceType = pieceType;
         switch (pieceType)
         {
             case PieceType.SwirlLeft:
-                trianglePieceVisual.SetSwirlLeft();
+                TrianglePieceVisual.SetSwirlLeft();
                 break;
             case PieceType.SwirlRight:
-                trianglePieceVisual.SetSwirlRight();
+                TrianglePieceVisual.SetSwirlRight();
                 break;
             case PieceType.Ray:
-                trianglePieceVisual.SetRay();
+                TrianglePieceVisual.SetRay();
                 break;
         }
     }
@@ -118,10 +106,10 @@ public class TrianglePiece : MonoBehaviour
         Side2Color = a_Color2;
         Side3Color = a_Color3;
 
-        trianglePieceVisual.SetSideColor(0, GetColor(Side1Color));
-        trianglePieceVisual.SetSideColor(1, GetColor(Side1Color));
-        trianglePieceVisual.SetSideColor(2, GetColor(Side2Color));
-        trianglePieceVisual.SetSideColor(3, GetColor(Side3Color));
+        TrianglePieceVisual.SetSideColor(0, GetColor(Side1Color));
+        TrianglePieceVisual.SetSideColor(1, GetColor(Side1Color));
+        TrianglePieceVisual.SetSideColor(2, GetColor(Side2Color));
+        TrianglePieceVisual.SetSideColor(3, GetColor(Side3Color));
     }
 
     public void SetBackgroundColors(PieceColor a_Color1, PieceColor a_Color2, PieceColor a_Color3)
@@ -130,10 +118,10 @@ public class TrianglePiece : MonoBehaviour
         Background2Color = a_Color2;
         Background3Color = a_Color3;
 
-        trianglePieceVisual.SetBackgroundColor(0, GetColor(Background1Color));
-        trianglePieceVisual.SetBackgroundColor(1, GetColor(Background1Color));
-        trianglePieceVisual.SetBackgroundColor(2, GetColor(Background2Color));
-        trianglePieceVisual.SetBackgroundColor(3, GetColor(Background3Color));
+        TrianglePieceVisual.SetBackgroundColor(0, GetColor(Background1Color));
+        TrianglePieceVisual.SetBackgroundColor(1, GetColor(Background1Color));
+        TrianglePieceVisual.SetBackgroundColor(2, GetColor(Background2Color));
+        TrianglePieceVisual.SetBackgroundColor(3, GetColor(Background3Color));
     }
 
     public void SetBackgroundColors(PieceColor a_Color)
@@ -143,53 +131,34 @@ public class TrianglePiece : MonoBehaviour
 
     public void GlowOn()
     {
-        trianglePieceVisual.ShowGlow();
+        TrianglePieceVisual.ShowGlow();
     }
 
     public void GlowOff()
     {
-        trianglePieceVisual.HideGlow();
+        TrianglePieceVisual.HideGlow();
     }
 
     public void SetGlowColor(PieceColor a_Color)
     {
         GlowColor = a_Color;
-        trianglePieceVisual.SetGlowColor(GetColor(GlowColor) );
+        TrianglePieceVisual.SetGlowColor(GetColor(GlowColor) );
     }
 
     public void OutlineOn()
     {
-        trianglePieceVisual.ShowOutline();
+        TrianglePieceVisual.ShowOutline();
     }
 
     public void OutlineOff()
     {
-        trianglePieceVisual.HideOutline();
+        TrianglePieceVisual.HideOutline();
     }
 
     public void SetOutlineColor(PieceColor a_Color)
     {
         OutlineColor = a_Color;
-        trianglePieceVisual.SetOutlineColor(GetColor(OutlineColor));
-    }
-    private PieceColor GetRandomPieceColor()
-    {
-        Array _EnumValues = Enum.GetValues(typeof(PieceColor));
-        int _RandomIndex = UnityEngine.Random.Range(2, _EnumValues.Length);
-        PieceColor _RandomPieceColor = (PieceColor)_EnumValues.GetValue(_RandomIndex);
-
-        Debug.Log("Random Index: " + _RandomIndex);
-
-        return _RandomPieceColor;
-    }
-
-    private PieceType GetRandomPieceType()
-    {
-        Array _EnumValues = Enum.GetValues(typeof(PieceType));
-        int _RandomeIndex = UnityEngine.Random.Range(0, _EnumValues.Length);
-        PieceType _RandomPieceType = (PieceType)_EnumValues.GetValue(_RandomeIndex);
-
-        return _RandomPieceType;
+        TrianglePieceVisual.SetOutlineColor(GetColor(OutlineColor));
     }
 
     private float NormalizeNumber(int a_Number)

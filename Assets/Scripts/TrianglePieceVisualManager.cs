@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using UnityEngine;
 
-public class TrianglePieceVisual : MonoBehaviour
+public class TrianglePieceVisualManager : MonoBehaviour
 {
     [SerializeField] private GameObject Side0;
     [SerializeField] private GameObject Side1;
