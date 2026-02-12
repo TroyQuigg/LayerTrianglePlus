@@ -25,41 +25,46 @@ public class GameBoardManager : MonoBehaviour
     private Quaternion B03_Rotation;
     private Quaternion B04_Rotation;
 
-    //private float A01_StartRotation;
-    //private float A02_StartRotation;
-    //private float A03_StartRotation;
-    //private float A04_StartRotation;
-    //private float B01_StartRotation;
-    //private float B02_StartRotation;
-    //private float B03_StartRotation;
-    //private float B04_StartRotation;
-
+    private float A01_StartZ;
+    private float A02_StartZ;
+    private float A03_StartZ;
+    private float A04_StartZ;
+    private float B01_StartZ;
+    private float B02_StartZ;
+    private float B03_StartZ;
+    private float B04_StartZ;
 
     private float RotationSpeed;
     private float RotationDelta;
+    private float DeltaX;
+    private float DeltaY;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        RotationSpeed = 3;
-        RotationDelta = 60f;
-        //A01_StartRotation = GamePiece_A01.transform.rotation.z;
-        //A02_StartRotation = GamePiece_A02.transform.rotation.z;
-        //A03_StartRotation = GamePiece_A03.transform.rotation.z;
-        //A04_StartRotation = GamePiece_A04.transform.rotation.z;
-        //B01_StartRotation = GamePiece_B01.transform.rotation.z;
-        //B02_StartRotation = GamePiece_B02.transform.rotation.z;
-        //B03_StartRotation = GamePiece_B03.transform.rotation.z;
-        //B04_StartRotation = GamePiece_B04.transform.rotation.z;
+        RotationSpeed = 1;
+        RotationDelta = 120f;
+        DeltaX = .01f;
+        DeltaY = .001f;
 
-        A01_Rotation = GamePiece_A01.transform.rotation;
-        A02_Rotation = GamePiece_A02.transform.rotation;
-        A03_Rotation = GamePiece_A03.transform.rotation;
-        A04_Rotation = GamePiece_A04.transform.rotation;
-        B01_Rotation = GamePiece_B01.transform.rotation;
-        B02_Rotation = GamePiece_B02.transform.rotation;
-        B03_Rotation = GamePiece_B03.transform.rotation;
-        B04_Rotation = GamePiece_B04.transform.rotation;
+        A01_StartZ = GamePiece_A01.transform.rotation.eulerAngles.z;
+        A02_StartZ = GamePiece_A02.transform.rotation.eulerAngles.z;
+        A03_StartZ = GamePiece_A03.transform.rotation.eulerAngles.z;
+        A04_StartZ = GamePiece_A04.transform.rotation.eulerAngles.z;
+        B01_StartZ = GamePiece_B01.transform.rotation.eulerAngles.z;
+        B02_StartZ = GamePiece_B02.transform.rotation.eulerAngles.z;
+        B03_StartZ = GamePiece_B03.transform.rotation.eulerAngles.z;
+        B04_StartZ = GamePiece_B04.transform.rotation.eulerAngles.z;
+
+        A01_Rotation = Quaternion.Euler(0, 0, A01_StartZ + RotationDelta);
+        A02_Rotation = Quaternion.Euler(0, 0, A02_StartZ + RotationDelta);
+        A03_Rotation = Quaternion.Euler(0, 0, A03_StartZ + RotationDelta);
+        A04_Rotation = Quaternion.Euler(0, 0, A04_StartZ + RotationDelta);
+        B01_Rotation = Quaternion.Euler(0, 0, B01_StartZ + RotationDelta);
+        B02_Rotation = Quaternion.Euler(0, 0, B02_StartZ + RotationDelta);
+        B03_Rotation = Quaternion.Euler(0, 0, B03_StartZ + RotationDelta);
+        B04_Rotation = Quaternion.Euler(0, 0, B04_StartZ + RotationDelta);
 
         GamePiece_A01.GetComponent<TrianglePieceManager>().SetPieceType(GetRandomPieceType());
         GamePiece_A01.GetComponent<TrianglePieceManager>().SetPieceColors(GetRandomPieceColor(), GetRandomPieceColor(), GetRandomPieceColor());
@@ -130,30 +135,14 @@ public class GameBoardManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GamePiece_A01.transform.position = new Vector3(GamePiece_A01.transform.position.x + (.3f) * Time.deltaTime, GamePiece_A01.transform.position.y, GamePiece_A01.transform.position.z);
-        GamePiece_A02.transform.position = new Vector3(GamePiece_A02.transform.position.x + (.4f) * Time.deltaTime, GamePiece_A02.transform.position.y, GamePiece_A02.transform.position.z);
-        GamePiece_A03.transform.position = new Vector3(GamePiece_A03.transform.position.x + (.5f) * Time.deltaTime, GamePiece_A03.transform.position.y, GamePiece_A03.transform.position.z);
-        GamePiece_A04.transform.position = new Vector3(GamePiece_A04.transform.position.x + (.6f) * Time.deltaTime, GamePiece_A04.transform.position.y, GamePiece_A04.transform.position.z);
-        GamePiece_B01.transform.position = new Vector3(GamePiece_B01.transform.position.x + (.7f) * Time.deltaTime, GamePiece_B01.transform.position.y, GamePiece_B01.transform.position.z);
-        GamePiece_B02.transform.position = new Vector3(GamePiece_B02.transform.position.x + (.8f) * Time.deltaTime, GamePiece_B02.transform.position.y, GamePiece_B02.transform.position.z);
-        GamePiece_B03.transform.position = new Vector3(GamePiece_B03.transform.position.x + (.9f) * Time.deltaTime, GamePiece_B03.transform.position.y, GamePiece_B03.transform.position.z);
-        GamePiece_B04.transform.position = new Vector3(GamePiece_B04.transform.position.x + (.2f) * Time.deltaTime, GamePiece_B04.transform.position.y, GamePiece_B04.transform.position.z);
-
-        A01_Rotation = Quaternion.AngleAxis(RotationDelta, GamePiece_A01.transform.forward);
-        A02_Rotation = Quaternion.AngleAxis(RotationDelta, GamePiece_A02.transform.forward);
-        A03_Rotation = Quaternion.AngleAxis(RotationDelta, GamePiece_A03.transform.forward);
-        A04_Rotation = Quaternion.AngleAxis(RotationDelta, GamePiece_A04.transform.forward);
-        B01_Rotation = Quaternion.AngleAxis(RotationDelta, GamePiece_B01.transform.forward);
-        B02_Rotation = Quaternion.AngleAxis(RotationDelta, GamePiece_B02.transform.forward);
-        B03_Rotation = Quaternion.AngleAxis(RotationDelta, GamePiece_B03.transform.forward);
-        B04_Rotation = Quaternion.AngleAxis(RotationDelta, GamePiece_B04.transform.forward);
-        //A02_Rotation = Quaternion.AngleAxis(60, GamePiece_A02.transform.forward);
-        //A03_Rotation = Quaternion.AngleAxis(60, GamePiece_A03.transform.forward);
-        //A04_Rotation = Quaternion.AngleAxis(60, GamePiece_A04.transform.forward);
-        //B01_Rotation = Quaternion.AngleAxis(-60, GamePiece_B01.transform.forward);
-        //B02_Rotation = Quaternion.AngleAxis(-60, GamePiece_B02.transform.forward);
-        //B03_Rotation = Quaternion.AngleAxis(-60, GamePiece_B03.transform.forward);
-        //B04_Rotation = Quaternion.AngleAxis(-60, GamePiece_B04.transform.forward);
+        GamePiece_A01.transform.position = new Vector3(GamePiece_A01.transform.position.x + (DeltaX) * Time.deltaTime, GamePiece_A01.transform.position.y + (DeltaY), GamePiece_A01.transform.position.z);
+        GamePiece_A02.transform.position = new Vector3(GamePiece_A02.transform.position.x + (DeltaX) * Time.deltaTime, GamePiece_A02.transform.position.y + (DeltaY), GamePiece_A02.transform.position.z);
+        GamePiece_A03.transform.position = new Vector3(GamePiece_A03.transform.position.x + (DeltaX) * Time.deltaTime, GamePiece_A03.transform.position.y + (DeltaY), GamePiece_A03.transform.position.z);
+        GamePiece_A04.transform.position = new Vector3(GamePiece_A04.transform.position.x + (DeltaX) * Time.deltaTime, GamePiece_A04.transform.position.y + (DeltaY), GamePiece_A04.transform.position.z);
+        GamePiece_B01.transform.position = new Vector3(GamePiece_B01.transform.position.x + (DeltaX) * Time.deltaTime, GamePiece_B01.transform.position.y + (DeltaY), GamePiece_B01.transform.position.z);
+        GamePiece_B02.transform.position = new Vector3(GamePiece_B02.transform.position.x + (DeltaX) * Time.deltaTime, GamePiece_B02.transform.position.y + (DeltaY), GamePiece_B02.transform.position.z);
+        GamePiece_B03.transform.position = new Vector3(GamePiece_B03.transform.position.x + (DeltaX) * Time.deltaTime, GamePiece_B03.transform.position.y + (DeltaY), GamePiece_B03.transform.position.z);
+        GamePiece_B04.transform.position = new Vector3(GamePiece_B04.transform.position.x + (DeltaX) * Time.deltaTime, GamePiece_B04.transform.position.y + (DeltaY), GamePiece_B04.transform.position.z);
 
         GamePiece_A01.transform.rotation = Quaternion.Lerp(GamePiece_A01.transform.rotation, A01_Rotation, RotationSpeed * Time.deltaTime);
         GamePiece_A02.transform.rotation = Quaternion.Lerp(GamePiece_A02.transform.rotation, A02_Rotation, RotationSpeed * Time.deltaTime);
