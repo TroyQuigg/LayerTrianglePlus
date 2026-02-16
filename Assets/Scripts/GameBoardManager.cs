@@ -5,22 +5,23 @@ using Unity.VisualScripting;
 using UnityEngine;
 using static TrianglePieceManager;
 using System.Linq;
+using System.Text;
 
 public class GameBoardManager : MonoBehaviour
 {
 
-    [SerializeField] private GameObject[] GamePieces;
-    [SerializeField] private PieceData[] GamePiecesData;
+    [SerializeField] private List<PieceData> GameBoardPieceList;
+
+    private int TotalGamePieces;
 
     private float RotationDelta;
     private float DeltaX;
     private float DeltaY;
-
-
-
+    
     // Start is called before the first frame update
     void Start()
     {
+        TotalGamePieces = 32;
 
         RotationDelta = 120f;
 
@@ -29,32 +30,34 @@ public class GameBoardManager : MonoBehaviour
 
         int index = 0;
 
-        GamePiecesData = new PieceData[GamePieces.Length];
+        GameBoardPieceList = new List<PieceData>();
+
+        for (int i = 0; i < TotalGamePieces; i++)
+        {
+            GameObject _GameObject = GameObject.Find(GetPieceNameFromNumber(i));
+            GameBoardPieceList.Add(new PieceData(_GameObject));
+        }
    
         index = 0;
-        foreach (GameObject GamePiece in GamePieces)
+        foreach (PieceData GamePiece in GameBoardPieceList)
         {
             float _Speed = UnityEngine.Random.Range(1, 5);
 
-            GamePiece.GetComponent<TrianglePieceManager>().SetPieceType(GetRandomPieceType());
-            GamePiece.GetComponent<TrianglePieceManager>().SetPieceColors(GetRandomPieceColor(), GetRandomPieceColor(), GetRandomPieceColor());
-            GamePiece.GetComponent<TrianglePieceManager>().SetBackgroundColors(PieceColor.Black);
-            GamePiece.GetComponent<TrianglePieceManager>().SetOutlineColor(PieceColor.Black);
-            GamePiece.GetComponent<TrianglePieceManager>().OutlineOff();
-            GamePiece.GetComponent<TrianglePieceManager>().SetGlowColor(GetRandomPieceColor());
-            GamePiece.GetComponent<TrianglePieceManager>().GlowOn();
+            GamePiece.TrianglePieceObject.GetComponent<TrianglePieceManager>().SetPieceType(GetRandomPieceType());
+            GamePiece.TrianglePieceObject.GetComponent<TrianglePieceManager>().SetPieceColors(GetRandomPieceColor(), GetRandomPieceColor(), GetRandomPieceColor());
+            GamePiece.TrianglePieceObject.GetComponent<TrianglePieceManager>().SetBackgroundColors(PieceColor.Black);
+            GamePiece.TrianglePieceObject.GetComponent<TrianglePieceManager>().SetOutlineColor(PieceColor.Black);
+            GamePiece.TrianglePieceObject.GetComponent<TrianglePieceManager>().OutlineOff();
+            GamePiece.TrianglePieceObject.GetComponent<TrianglePieceManager>().SetGlowColor(GetRandomPieceColor());
+            GamePiece.TrianglePieceObject.GetComponent<TrianglePieceManager>().GlowOn();
 
-            GamePiecesData[index] = new PieceData();
+            GamePiece.NewPosition = new Vector3(GamePiece.TrianglePieceObject.transform.position.x + DeltaX, GamePiece.TrianglePieceObject.transform.position.y + DeltaY, GamePiece.TrianglePieceObject.transform.position.z);
+            GamePiece.IsMoving = false;
+            StartCoroutine(LerpMoveOverTime(GamePiece.TrianglePieceObject, GamePiece, _Speed));
 
-            GamePiecesData[index].CurrentPosition = GamePiece.transform.position;
-            GamePiecesData[index].NewPosition = new Vector3(GamePiece.transform.position.x + DeltaX, GamePiece.transform.position.y + DeltaY, GamePiece.transform.position.z);
-            GamePiecesData[index].IsMoving = false;
-            StartCoroutine(LerpMoveOverTime(GamePiece, GamePiecesData[index], _Speed));
-
-            GamePiecesData[index].CurrentRotation = GamePiece.transform.rotation;
-            GamePiecesData[index].NewRotation = Quaternion.Euler(0, 0, GamePiece.transform.rotation.eulerAngles.z + RotationDelta); ;
-            GamePiecesData[index].IsRotating = false;
-            StartCoroutine(LerpRotateOverTime(GamePiece, GamePiecesData[index], _Speed));
+            GamePiece.NewRotation = Quaternion.Euler(0, 0, GamePiece.TrianglePieceObject.transform.rotation.eulerAngles.z + RotationDelta); ;
+            GamePiece.IsRotating = false;
+            StartCoroutine(LerpRotateOverTime(GamePiece.TrianglePieceObject, GamePiece, _Speed));
 
             index++;
         }
@@ -113,17 +116,58 @@ public class GameBoardManager : MonoBehaviour
         return _RandomPieceType;
     }
 
-    [System.Serializable]
-    public class PieceData
+    private string GetPieceNameFromNumber(int a_Number)
     {
-        public Vector3 CurrentPosition;
-        public Vector3 NewPosition;
-        public bool IsMoving;
+        StringBuilder _FullName = new StringBuilder();
+        _FullName.Append("TriangleGamePiece_");
 
-        public Quaternion CurrentRotation;
-        public Quaternion NewRotation;
-        public float RotateAmount;
-        public bool IsRotating;
-
+        switch (a_Number) {
+            case int i when i >= 0 && i <=7:
+                _FullName.Append("A0" + (a_Number + 1).ToString());
+                break;
+            case int i when i >= 8 && a_Number <= 15:
+                _FullName.Append("B0" + (a_Number - 7).ToString());
+                break;
+            case int i when i >= 16 && a_Number <= 23:
+                _FullName.Append("C0" + (a_Number - 15).ToString());
+                break;
+            case int i when i >= 24 && a_Number <= 31:
+                _FullName.Append("D0" + (a_Number - 23).ToString());
+                break;
+        }
+        
+        return _FullName.ToString();
+    
     }
+}
+
+[System.Serializable]
+public class PieceData
+{
+    public Vector3 CurrentPosition;
+    public Vector3 NewPosition;
+    public bool IsMoving;
+
+    public Quaternion CurrentRotation;
+    public Quaternion NewRotation;
+    public float RotateAmount;
+    public bool IsRotating;
+
+    public GameObject TrianglePieceObject;
+    public PieceData()
+    {
+        IsMoving = false;
+        IsRotating = false;
+    }
+
+    public PieceData(GameObject a_TrianglePieceObject)
+    {
+        CurrentPosition = a_TrianglePieceObject.transform.position;
+        IsMoving = false;
+        CurrentRotation = a_TrianglePieceObject.transform.rotation;
+        IsRotating = false;
+        TrianglePieceObject = a_TrianglePieceObject;
+    }
+
+
 }
