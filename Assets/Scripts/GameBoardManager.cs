@@ -11,6 +11,8 @@ public class GameBoardManager : MonoBehaviour
 {
 
     [SerializeField] private List<PieceData> GameBoardPieceList;
+    //[SerializeField] GameObject testGameObject;
+    //[SerializeField] private TrianglePieceManager MyTrianglePieceManager;
 
     private int TotalGamePieces;
 
@@ -28,39 +30,18 @@ public class GameBoardManager : MonoBehaviour
         DeltaX = 10f;
         DeltaY = 10f;
 
-        int index = 0;
+        SetupBoardPieces();
 
-        GameBoardPieceList = new List<PieceData>();
+        //MyTrianglePieceManager = testGameObject.GetComponent<TrianglePieceManager>();
 
-        for (int i = 0; i < TotalGamePieces; i++)
-        {
-            GameObject _GameObject = GameObject.Find(GetPieceNameFromNumber(i));
-            GameBoardPieceList.Add(new PieceData(_GameObject));
-        }
-   
-        index = 0;
-        foreach (PieceData GamePiece in GameBoardPieceList)
-        {
-            float _Speed = UnityEngine.Random.Range(1, 5);
+        //MyTrianglePieceManager.SetPieceType(GetRandomPieceType());
+        //MyTrianglePieceManager.SetPieceColors(GetRandomPieceColor(), GetRandomPieceColor(), GetRandomPieceColor());
+        //MyTrianglePieceManager.SetBackgroundColors(PieceColor.Black);
+        //MyTrianglePieceManager.SetOutlineColor(PieceColor.Black);
+        //MyTrianglePieceManager.OutlineOff();
+        //MyTrianglePieceManager.SetGlowColor(GetRandomPieceColor());
+        //MyTrianglePieceManager.GlowOn();
 
-            GamePiece.TrianglePieceObject.GetComponent<TrianglePieceManager>().SetPieceType(GetRandomPieceType());
-            GamePiece.TrianglePieceObject.GetComponent<TrianglePieceManager>().SetPieceColors(GetRandomPieceColor(), GetRandomPieceColor(), GetRandomPieceColor());
-            GamePiece.TrianglePieceObject.GetComponent<TrianglePieceManager>().SetBackgroundColors(PieceColor.Black);
-            GamePiece.TrianglePieceObject.GetComponent<TrianglePieceManager>().SetOutlineColor(PieceColor.Black);
-            GamePiece.TrianglePieceObject.GetComponent<TrianglePieceManager>().OutlineOff();
-            GamePiece.TrianglePieceObject.GetComponent<TrianglePieceManager>().SetGlowColor(GetRandomPieceColor());
-            GamePiece.TrianglePieceObject.GetComponent<TrianglePieceManager>().GlowOn();
-
-            GamePiece.NewPosition = new Vector3(GamePiece.TrianglePieceObject.transform.position.x + DeltaX, GamePiece.TrianglePieceObject.transform.position.y + DeltaY, GamePiece.TrianglePieceObject.transform.position.z);
-            GamePiece.IsMoving = false;
-            StartCoroutine(LerpMoveOverTime(GamePiece.TrianglePieceObject, GamePiece, _Speed));
-
-            GamePiece.NewRotation = Quaternion.Euler(0, 0, GamePiece.TrianglePieceObject.transform.rotation.eulerAngles.z + RotationDelta); ;
-            GamePiece.IsRotating = false;
-            StartCoroutine(LerpRotateOverTime(GamePiece.TrianglePieceObject, GamePiece, _Speed));
-
-            index++;
-        }
 
     }
 
@@ -139,6 +120,42 @@ public class GameBoardManager : MonoBehaviour
         return _FullName.ToString();
     
     }
+
+    private void SetupBoardPieces()
+    {
+        GameBoardPieceList = new List<PieceData>();
+
+        for (int i = 0; i < TotalGamePieces; i++)
+        {
+            GameObject _GameObject = GameObject.Find(GetPieceNameFromNumber(i));
+            GameBoardPieceList.Add(new PieceData(_GameObject));
+        }
+
+        foreach (PieceData GamePiece in GameBoardPieceList)
+        {
+            float _Speed = UnityEngine.Random.Range(1, 5);
+
+            TrianglePieceManager _TrianglePieceManager = GamePiece.TrianglePieceObject.GetComponent<TrianglePieceManager>();
+
+            _TrianglePieceManager.SetPieceType(GetRandomPieceType());
+            _TrianglePieceManager.SetPieceColors(GetRandomPieceColor(), GetRandomPieceColor(), GetRandomPieceColor());
+            _TrianglePieceManager.SetBackgroundColors(PieceColor.Black);
+            _TrianglePieceManager.SetOutlineColor(PieceColor.Black);
+            _TrianglePieceManager.OutlineOff();
+            _TrianglePieceManager.SetGlowColor(GetRandomPieceColor());
+            _TrianglePieceManager.GlowOn();
+
+            GamePiece.NewPosition = new Vector3(GamePiece.TrianglePieceObject.transform.position.x + DeltaX, GamePiece.TrianglePieceObject.transform.position.y + DeltaY, GamePiece.TrianglePieceObject.transform.position.z);
+            GamePiece.IsMoving = false;
+            StartCoroutine(LerpMoveOverTime(GamePiece.TrianglePieceObject, GamePiece, _Speed));
+
+            GamePiece.NewRotation = Quaternion.Euler(0, 0, GamePiece.TrianglePieceObject.transform.rotation.eulerAngles.z + RotationDelta); ;
+            GamePiece.IsRotating = false;
+            StartCoroutine(LerpRotateOverTime(GamePiece.TrianglePieceObject, GamePiece, _Speed));
+
+        }
+    }
+
 }
 
 [System.Serializable]

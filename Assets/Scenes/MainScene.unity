@@ -141,11 +141,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2406156729385649634, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -17.03
+      value: -19
       objectReference: {fileID: 0}
     - target: {fileID: 2406156729385649634, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 11.1
+      value: 11.4
       objectReference: {fileID: 0}
     - target: {fileID: 2406156729385649634, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -200,13 +200,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: TriangleGamePiece_D03
       objectReference: {fileID: 0}
+    - target: {fileID: 2283793726741614380, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2406156729385649634, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.920003
+      value: -8.890002
       objectReference: {fileID: 0}
     - target: {fileID: 2406156729385649634, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -10.56
+      value: -10.260001
       objectReference: {fileID: 0}
     - target: {fileID: 2406156729385649634, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -266,13 +270,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: TriangleGamePiece_D06
       objectReference: {fileID: 0}
+    - target: {fileID: 2283793726741614380, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2406156729385649634, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.309997
+      value: 6.3399973
       objectReference: {fileID: 0}
     - target: {fileID: 2406156729385649634, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -13.0199995
+      value: -12.72
       objectReference: {fileID: 0}
     - target: {fileID: 2406156729385649634, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -327,13 +335,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: TriangleGamePiece_B01
       objectReference: {fileID: 0}
+    - target: {fileID: 2283793726741614380, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2406156729385649634, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -17.03
+      value: -19
       objectReference: {fileID: 0}
     - target: {fileID: 2406156729385649634, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.6000004
+      value: 5.8999996
       objectReference: {fileID: 0}
     - target: {fileID: 2406156729385649634, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -502,7 +514,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 13
+  orthographic size: 20
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -545,13 +557,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: TriangleGamePiece_D08
       objectReference: {fileID: 0}
+    - target: {fileID: 2283793726741614380, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2406156729385649634, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 18.309996
+      value: 16.339996
       objectReference: {fileID: 0}
     - target: {fileID: 2406156729385649634, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -13.0199995
+      value: -12.72
       objectReference: {fileID: 0}
     - target: {fileID: 2406156729385649634, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -611,13 +627,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: TriangleGamePiece_B04
       objectReference: {fileID: 0}
+    - target: {fileID: 2283793726741614380, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2406156729385649634, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.0300016
+      value: -4.000001
       objectReference: {fileID: 0}
     - target: {fileID: 2406156729385649634, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.1000004
+      value: 3.3999996
       objectReference: {fileID: 0}
     - target: {fileID: 2406156729385649634, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -759,13 +779,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: TriangleGamePiece_A06
       objectReference: {fileID: 0}
+    - target: {fileID: 2283793726741614380, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2406156729385649634, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.199998
+      value: 6.2299986
       objectReference: {fileID: 0}
     - target: {fileID: 2406156729385649634, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 13.64
+      value: 13.94
       objectReference: {fileID: 0}
     - target: {fileID: 2406156729385649634, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -823,6 +847,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2406156729385649634, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
   m_PrefabInstance: {fileID: 1970770366}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &669275329 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2283793726741614380, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
+  m_PrefabInstance: {fileID: 113790192}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &676134394
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -835,13 +864,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: TriangleGamePiece_A08
       objectReference: {fileID: 0}
+    - target: {fileID: 2283793726741614380, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2406156729385649634, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 18.199999
+      value: 16.23
       objectReference: {fileID: 0}
     - target: {fileID: 2406156729385649634, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 13.64
+      value: 13.94
       objectReference: {fileID: 0}
     - target: {fileID: 2406156729385649634, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -896,13 +929,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: TriangleGamePiece_C02
       objectReference: {fileID: 0}
+    - target: {fileID: 2283793726741614380, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2406156729385649634, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11.960003
+      value: -13.930002
       objectReference: {fileID: 0}
     - target: {fileID: 2406156729385649634, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.5100002
+      value: -2.210001
       objectReference: {fileID: 0}
     - target: {fileID: 2406156729385649634, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -957,13 +994,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: TriangleGamePiece_A05
       objectReference: {fileID: 0}
+    - target: {fileID: 2283793726741614380, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2406156729385649634, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.199998
+      value: 1.2299986
       objectReference: {fileID: 0}
     - target: {fileID: 2406156729385649634, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 11.14
+      value: 11.44
       objectReference: {fileID: 0}
     - target: {fileID: 2406156729385649634, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1018,13 +1059,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: TriangleGamePiece_B08
       objectReference: {fileID: 0}
+    - target: {fileID: 2283793726741614380, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2406156729385649634, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 18.199999
+      value: 16.23
       objectReference: {fileID: 0}
     - target: {fileID: 2406156729385649634, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.1400003
+      value: 3.4399996
       objectReference: {fileID: 0}
     - target: {fileID: 2406156729385649634, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1084,13 +1129,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: TriangleGamePiece_D04
       objectReference: {fileID: 0}
+    - target: {fileID: 2283793726741614380, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2406156729385649634, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.9200025
+      value: -3.8900018
       objectReference: {fileID: 0}
     - target: {fileID: 2406156729385649634, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -13.06
+      value: -12.760001
       objectReference: {fileID: 0}
     - target: {fileID: 2406156729385649634, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1145,13 +1194,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: TriangleGamePiece_B06
       objectReference: {fileID: 0}
+    - target: {fileID: 2283793726741614380, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2406156729385649634, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.199998
+      value: 6.2299986
       objectReference: {fileID: 0}
     - target: {fileID: 2406156729385649634, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.1400003
+      value: 3.4399996
       objectReference: {fileID: 0}
     - target: {fileID: 2406156729385649634, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1211,13 +1264,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: TriangleGamePiece_C01
       objectReference: {fileID: 0}
+    - target: {fileID: 2283793726741614380, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2406156729385649634, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -16.960005
+      value: -18.930004
       objectReference: {fileID: 0}
     - target: {fileID: 2406156729385649634, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.010001
+      value: -4.710002
       objectReference: {fileID: 0}
     - target: {fileID: 2406156729385649634, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1272,13 +1329,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: TriangleGamePiece_C03
       objectReference: {fileID: 0}
+    - target: {fileID: 2283793726741614380, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2406156729385649634, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.960003
+      value: -8.930002
       objectReference: {fileID: 0}
     - target: {fileID: 2406156729385649634, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.010001
+      value: -4.710002
       objectReference: {fileID: 0}
     - target: {fileID: 2406156729385649634, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1343,13 +1404,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: TriangleGamePiece_C06
       objectReference: {fileID: 0}
+    - target: {fileID: 2283793726741614380, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2406156729385649634, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.269997
+      value: 6.2999973
       objectReference: {fileID: 0}
     - target: {fileID: 2406156729385649634, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.4700003
+      value: -2.170001
       objectReference: {fileID: 0}
     - target: {fileID: 2406156729385649634, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1484,6 +1549,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameBoardPieceList: []
+  testGameObject: {fileID: 669275329}
+  MyTrianglePieceManager: {fileID: 0}
 --- !u!1001 &1201071024
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1496,13 +1563,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: TriangleGamePiece_A07
       objectReference: {fileID: 0}
+    - target: {fileID: 2283793726741614380, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2406156729385649634, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 13.199998
+      value: 11.229999
       objectReference: {fileID: 0}
     - target: {fileID: 2406156729385649634, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 11.14
+      value: 11.44
       objectReference: {fileID: 0}
     - target: {fileID: 2406156729385649634, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1562,13 +1633,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: TriangleGamePiece_D02
       objectReference: {fileID: 0}
+    - target: {fileID: 2283793726741614380, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2406156729385649634, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11.920003
+      value: -13.890002
       objectReference: {fileID: 0}
     - target: {fileID: 2406156729385649634, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -13.06
+      value: -12.760001
       objectReference: {fileID: 0}
     - target: {fileID: 2406156729385649634, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1648,13 +1723,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: TriangleGamePiece_B03
       objectReference: {fileID: 0}
+    - target: {fileID: 2283793726741614380, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2406156729385649634, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.0300016
+      value: -9.000001
       objectReference: {fileID: 0}
     - target: {fileID: 2406156729385649634, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.6000004
+      value: 5.8999996
       objectReference: {fileID: 0}
     - target: {fileID: 2406156729385649634, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1719,13 +1798,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: TriangleGamePiece_B07
       objectReference: {fileID: 0}
+    - target: {fileID: 2283793726741614380, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2406156729385649634, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 13.199998
+      value: 11.229999
       objectReference: {fileID: 0}
     - target: {fileID: 2406156729385649634, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.6400003
+      value: 5.9399996
       objectReference: {fileID: 0}
     - target: {fileID: 2406156729385649634, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1780,13 +1863,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: TriangleGamePiece_B05
       objectReference: {fileID: 0}
+    - target: {fileID: 2283793726741614380, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2406156729385649634, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.199998
+      value: 1.2299986
       objectReference: {fileID: 0}
     - target: {fileID: 2406156729385649634, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.6400003
+      value: 5.9399996
       objectReference: {fileID: 0}
     - target: {fileID: 2406156729385649634, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1846,13 +1933,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: TriangleGamePiece_C05
       objectReference: {fileID: 0}
+    - target: {fileID: 2283793726741614380, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2406156729385649634, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.2699957
+      value: 1.2999964
       objectReference: {fileID: 0}
     - target: {fileID: 2406156729385649634, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.9700003
+      value: -4.670001
       objectReference: {fileID: 0}
     - target: {fileID: 2406156729385649634, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1907,13 +1998,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: TriangleGamePiece_D05
       objectReference: {fileID: 0}
+    - target: {fileID: 2283793726741614380, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2406156729385649634, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.3099966
+      value: 1.3399973
       objectReference: {fileID: 0}
     - target: {fileID: 2406156729385649634, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -10.5199995
+      value: -10.22
       objectReference: {fileID: 0}
     - target: {fileID: 2406156729385649634, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1968,13 +2063,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: TriangleGamePiece_D01
       objectReference: {fileID: 0}
+    - target: {fileID: 2283793726741614380, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2406156729385649634, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -16.920004
+      value: -18.890003
       objectReference: {fileID: 0}
     - target: {fileID: 2406156729385649634, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -10.56
+      value: -10.260001
       objectReference: {fileID: 0}
     - target: {fileID: 2406156729385649634, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2029,13 +2128,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: TriangleGamePiece_C08
       objectReference: {fileID: 0}
+    - target: {fileID: 2283793726741614380, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2406156729385649634, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 18.269995
+      value: 16.299995
       objectReference: {fileID: 0}
     - target: {fileID: 2406156729385649634, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.4700003
+      value: -2.170001
       objectReference: {fileID: 0}
     - target: {fileID: 2406156729385649634, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2095,13 +2198,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: TriangleGamePiece_A04
       objectReference: {fileID: 0}
+    - target: {fileID: 2283793726741614380, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2406156729385649634, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.0300016
+      value: -4.000001
       objectReference: {fileID: 0}
     - target: {fileID: 2406156729385649634, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 13.6
+      value: 13.9
       objectReference: {fileID: 0}
     - target: {fileID: 2406156729385649634, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2161,13 +2268,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: TriangleGamePiece_A03
       objectReference: {fileID: 0}
+    - target: {fileID: 2283793726741614380, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2406156729385649634, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.0300016
+      value: -9.000001
       objectReference: {fileID: 0}
     - target: {fileID: 2406156729385649634, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 11.1
+      value: 11.4
       objectReference: {fileID: 0}
     - target: {fileID: 2406156729385649634, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2222,13 +2333,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: TriangleGamePiece_A02
       objectReference: {fileID: 0}
+    - target: {fileID: 2283793726741614380, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2406156729385649634, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -12.030002
+      value: -14.000001
       objectReference: {fileID: 0}
     - target: {fileID: 2406156729385649634, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 13.6
+      value: 13.9
       objectReference: {fileID: 0}
     - target: {fileID: 2406156729385649634, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2283,13 +2398,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: TriangleGamePiece_C07
       objectReference: {fileID: 0}
+    - target: {fileID: 2283793726741614380, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2406156729385649634, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 13.269997
+      value: 11.299997
       objectReference: {fileID: 0}
     - target: {fileID: 2406156729385649634, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.9700003
+      value: -4.670001
       objectReference: {fileID: 0}
     - target: {fileID: 2406156729385649634, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2344,13 +2463,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: TriangleGamePiece_B02
       objectReference: {fileID: 0}
+    - target: {fileID: 2283793726741614380, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2406156729385649634, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -12.030002
+      value: -14.000001
       objectReference: {fileID: 0}
     - target: {fileID: 2406156729385649634, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.1000004
+      value: 3.3999996
       objectReference: {fileID: 0}
     - target: {fileID: 2406156729385649634, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2415,13 +2538,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: TriangleGamePiece_C04
       objectReference: {fileID: 0}
+    - target: {fileID: 2283793726741614380, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2406156729385649634, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.9600029
+      value: -3.9300022
       objectReference: {fileID: 0}
     - target: {fileID: 2406156729385649634, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.5100002
+      value: -2.210001
       objectReference: {fileID: 0}
     - target: {fileID: 2406156729385649634, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2476,13 +2603,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: TriangleGamePiece_D07
       objectReference: {fileID: 0}
+    - target: {fileID: 2283793726741614380, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2406156729385649634, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 13.309997
+      value: 11.339997
       objectReference: {fileID: 0}
     - target: {fileID: 2406156729385649634, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -10.5199995
+      value: -10.22
       objectReference: {fileID: 0}
     - target: {fileID: 2406156729385649634, guid: 64f8093b838a3184b9c841b974ca5e0b, type: 3}
       propertyPath: m_LocalPosition.z

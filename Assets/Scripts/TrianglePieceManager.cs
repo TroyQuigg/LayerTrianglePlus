@@ -45,12 +45,15 @@ public class TrianglePieceManager : MonoBehaviour
 
     }
 
+    private void Awake()
+    {
+        TrianglePieceVisual = VisualObject.GetComponent<TrianglePieceVisualManager>();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        TrianglePieceVisual = VisualObject.GetComponent<TrianglePieceVisualManager>();
 
-        //Debug.Log(("[{0}]", string.Join(", ", GetPieceColors())));
 
     }
 
