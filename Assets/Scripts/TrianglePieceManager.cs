@@ -103,6 +103,21 @@ public class TrianglePieceManager : MonoBehaviour
         };
     }
 
+    public void SetVisible(bool a_Active)
+    {
+        VisualObject.SetActive(a_Active);
+    }
+
+    public void Show()
+    {
+        VisualObject.SetActive(true);
+    }
+
+    public void Hide()
+    {
+        VisualObject.SetActive(false);
+    }
+
     public void SetPieceColors(PieceColor a_Color1, PieceColor a_Color2, PieceColor a_Color3)
     {
         Side1Color = a_Color1;
@@ -127,19 +142,24 @@ public class TrianglePieceManager : MonoBehaviour
         TrianglePieceVisual.SetBackgroundColor(3, GetColor(Background3Color));
     }
 
-    public void SetBackgroundColors(PieceColor a_Color)
+    public void SetBackgroundColor(PieceColor a_Color)
     {
         SetBackgroundColors(a_Color, a_Color, a_Color);
     }
 
-    public void GlowOn()
+    public void ShowGlow()
     {
         TrianglePieceVisual.ShowGlow();
     }
 
-    public void GlowOff()
+    public void HideGlow()
     {
         TrianglePieceVisual.HideGlow();
+    }
+
+    public void EnableGlow(bool a_GlowEnable)
+    {
+        TrianglePieceVisual.EnableGlow(a_GlowEnable);
     }
 
     public void SetGlowColor(PieceColor a_Color)
@@ -148,14 +168,19 @@ public class TrianglePieceManager : MonoBehaviour
         TrianglePieceVisual.SetGlowColor(GetColor(GlowColor) );
     }
 
-    public void OutlineOn()
+    public void ShowOutline()
     {
         TrianglePieceVisual.ShowOutline();
     }
 
-    public void OutlineOff()
+    public void HideOutline()
     {
         TrianglePieceVisual.HideOutline();
+    }
+
+    public void EnableOutline(bool a_OutlineEnable)
+    {
+        TrianglePieceVisual.EnableOutline(a_OutlineEnable);
     }
 
     public void SetOutlineColor(PieceColor a_Color)

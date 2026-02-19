@@ -111,15 +111,13 @@ public class GameBoardManager : MonoBehaviour
 
         foreach (PieceData GamePiece in GameBoardPieceList)
         {
-            TrianglePieceManager _TrianglePieceManager = GamePiece.TrianglePieceObject.GetComponent<TrianglePieceManager>();
-
-            _TrianglePieceManager.SetPieceType(GetRandomPieceType());
-            _TrianglePieceManager.SetPieceColors(GetRandomPieceColor(), GetRandomPieceColor(), GetRandomPieceColor());
-            _TrianglePieceManager.SetBackgroundColors(PieceColor.Black);
-            _TrianglePieceManager.SetOutlineColor(PieceColor.Black);
-            _TrianglePieceManager.OutlineOff();
-            _TrianglePieceManager.SetGlowColor(GetRandomPieceColor());
-            _TrianglePieceManager.GlowOn();
+            GamePiece.SetPieceType(GetRandomPieceType());
+            GamePiece.SetPieceColors(GetRandomPieceColor(), GetRandomPieceColor(), GetRandomPieceColor());
+            GamePiece.SetBackgroundColor(PieceColor.Black);
+            GamePiece.SetOutlineColor(PieceColor.Black);
+            GamePiece.EnableOutline(true);
+            GamePiece.SetGlowColor(GetRandomPieceColor());
+            GamePiece.EnableGlow(true);
         }
     }
 
@@ -176,29 +174,99 @@ public class GameBoardManager : MonoBehaviour
 [System.Serializable]
 public class PieceData
 {
+    public GameObject TrianglePieceObject;
+
     public Vector3 CurrentPosition;
     public Vector3 NewPosition;
-    public bool IsMoving;
-
+    
     public Quaternion CurrentRotation;
     public Quaternion NewRotation;
-    public float RotateAmount;
-    public bool IsRotating;
 
-    public GameObject TrianglePieceObject;
+    public float RotateAmount;
+
+    public bool IsSelected;
+    public bool IsMoving;
+    public bool IsRotating;
+    public bool IsEnabled { get => this._IsEnabled; private set => this._IsEnabled = value; }
+    [SerializeField]
+    private bool _IsEnabled = true;
+
+    public bool IsVisible { get => this._IsVisible; private set => this._IsVisible = value; }
+    [SerializeField]
+    private bool _IsVisible = true;
+
+    private TrianglePieceManager _TrianglePieceManager;
+    
     public PieceData()
     {
         IsMoving = false;
         IsRotating = false;
+        IsSelected = false;
     }
 
-    public PieceData(GameObject a_TrianglePieceObject)
+    public PieceData(GameObject a_TrianglePieceObject) : this()
     {
         CurrentPosition = a_TrianglePieceObject.transform.position;
-        IsMoving = false;
         CurrentRotation = a_TrianglePieceObject.transform.rotation;
-        IsRotating = false;
         TrianglePieceObject = a_TrianglePieceObject;
+        AssignTrianglePieceManager();
     }
 
+    public void AssignTrianglePieceManager()
+    {
+        _TrianglePieceManager = TrianglePieceObject.GetComponent<TrianglePieceManager>();
+    }
+
+    public void SetVisible(bool a_Visible)
+    {
+        IsVisible = a_Visible;
+        _TrianglePieceManager?.SetVisible(a_Visible);
+    }
+
+    public void SetEnabled(bool a_Enabled)
+    {
+        IsEnabled = a_Enabled;
+        TrianglePieceObject?.SetActive(a_Enabled);
+        SetVisible(a_Enabled);
+    }
+
+    public string GetName()
+    {
+        return TrianglePieceObject != null ? TrianglePieceObject.name : null;
+    }
+
+    public void SetOutlineColor(PieceColor a_Color)
+    {
+        _TrianglePieceManager?.SetOutlineColor(a_Color);
+    }
+
+    public void EnableOutline(bool a_EnableOutline)
+    {
+        _TrianglePieceManager?.EnableOutline(a_EnableOutline);
+    }
+
+    public void EnableGlow(bool a_EnableGlow)
+    {
+        _TrianglePieceManager?.EnableGlow(a_EnableGlow);
+    }
+
+    public void SetGlowColor(PieceColor a_Color)
+    {
+        _TrianglePieceManager?.SetGlowColor(a_Color);
+    }
+
+    public void SetPieceType(PieceType a_PieceType)
+    {
+        _TrianglePieceManager?.SetPieceType(a_PieceType);
+    }
+
+    public void SetPieceColors(PieceColor a_Color1, PieceColor a_Color2, PieceColor a_Color3)
+    {
+        _TrianglePieceManager?.SetPieceColors(a_Color1, a_Color2, a_Color3);
+    }
+
+    public void SetBackgroundColor(PieceColor a_Color)
+    {
+        _TrianglePieceManager?.SetBackgroundColor(a_Color);
+    }
 }

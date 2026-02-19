@@ -33,22 +33,32 @@ public class TrianglePieceVisualManager : MonoBehaviour
     
     public void ShowGlow()
     {
-        GlowOutline.SetActive(true);
+        EnableGlow(true);
     }
     
     public void HideGlow()
     {
-        GlowOutline.SetActive(false);
+        EnableGlow(false);
+    }
+
+    public void EnableGlow(bool a_EnableGlow)
+    {
+        GlowOutline.SetActive(a_EnableGlow);
     }
     
     public void ShowOutline()
     {
-        Outline.SetActive(true);
+        EnableOutline(true);
     }
     
     public void HideOutline()
     {
-        Outline.SetActive(false);
+        EnableOutline(false);
+    }
+
+    public void EnableOutline(bool a_EnableOutline)
+    {
+        Outline.SetActive(a_EnableOutline);
     }
     
     public void SetOutlineColor(Color a_Color)
